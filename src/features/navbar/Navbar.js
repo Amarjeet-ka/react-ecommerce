@@ -5,7 +5,7 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { Product } from "../productList/ProductList";
+import { Product } from "../productList/components/ProductList";
 import { Link } from "react-router-dom";
 
 const user = {
@@ -31,7 +31,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar({ childern }) {
+export default function Navbar({ children }) {
   return (
     <div>
       <div className="min-h-full">
@@ -226,7 +226,7 @@ export default function Navbar({ childern }) {
         </header>
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            {<Product />}
+         {children}
           </div>
         </main>
       </div>

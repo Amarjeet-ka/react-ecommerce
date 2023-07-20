@@ -51,7 +51,7 @@ export function Cart() {
 
   return (
     <>
-           <div className="bg-white  mx-auto p-10 pl-8 pr-8 px-2 sm:px-6 lg:px-8">
+      <div className="bg-white   mx-auto-7xl p-10 pl-8 pr-8 px-2 sm:px-6 lg:px-8">
         <h2 className="text-3xl  font-bold">Cart</h2>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="mt-6">
@@ -80,15 +80,15 @@ export function Cart() {
                         </p>
                       </div>
                       <div className="flex flex-1 items-end justify-between text-sm">
-                        <p className="text-gray-500 ">Qty {product.quantity}
-                        <select className="text-sm w-15 h-9 ml-2">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-
-                        </select>
+                        <p className="text-gray-500 ">
+                          Qty {product.quantity}
+                          <select className="text-sm w-15 h-9 ml-2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
                         </p>
 
                         <div className="flex">
@@ -116,26 +116,26 @@ export function Cart() {
               Shipping and taxes calculated at checkout.
             </p>
             <div className="mt-6">
-              <a
-                href="#"
+              <Link 
+                to="/checkout"
                 className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
               >
                 Checkout
-              </a>
+              </Link>
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
                 or
-               <Link to="/">
-               <button
-                  type="button"
-                  className="font-medium text-indigo-600 hover:text-indigo-500 ml-5 "
-                  onClick={() => setOpen(false)}
-                >
-                  Continue Shopping
-                  <span aria-hidden="true"> &rarr;</span>
-                </button>
-               </Link>
+                <Link to="/">
+                  <button
+                    type="button"
+                    className="font-medium text-indigo-600 hover:text-indigo-500 ml-5 "
+                    onClick={() => setOpen(false)}
+                  >
+                    Continue Shopping
+                    <span aria-hidden="true"> &rarr;</span>
+                  </button>
+                </Link>
               </p>
             </div>
           </div>

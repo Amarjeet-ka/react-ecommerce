@@ -6,7 +6,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from "./ProductListSlice";
+} from "../ProductListSlice";
 
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -17,7 +17,8 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import Pagination from "../pagination/Pagination";
+import Pagination from "../../pagination/Pagination";
+import { Link } from "react-router-dom";
 
 export function Product() {
   const count = useSelector(selectCount);
@@ -405,7 +406,8 @@ export function Product() {
 
                           <div className="mt-6 grid grid-cols-3 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {products.map((product) => (
-                              <div key={product.id} className="group relative">
+                             <Link to="/product-detail">  
+                            <div key={product.id} className="group relative">
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                   <img
                                     src={product.imageSrc}
@@ -432,7 +434,9 @@ export function Product() {
                                     {product.price}
                                   </p>
                                 </div>
+                            
                               </div>
+                              </Link>
                             ))}
                           </div>
                         </div>
