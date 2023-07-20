@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Product } from "../productList/ProductList";
+import { Link } from "react-router-dom";
 
 const user = {
   name: "Tom Cook",
@@ -69,20 +70,22 @@ export default function Navbar({ childern }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <button className="relative group">
-                          <ShoppingCartIcon
-                            className="h-6 w-6"
-                            aria-hidden="true"
-                          />
-                          <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 bg-red-600 text-white rounded-full text-xs font-bold transform translate-x-2 -translate-y-2">
-                            3
-                          </span>
+                      <Link to="/cart">
+                        <button
+                          type="button"
+                          className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <button className="relative group">
+                            <ShoppingCartIcon
+                              className="h-6 w-6"
+                              aria-hidden="true"
+                            />
+                            <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 bg-red-600 text-white rounded-full text-xs font-bold transform translate-x-2 -translate-y-2">
+                              3
+                            </span>
+                          </button>
                         </button>
-                      </button>
+                      </Link>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -182,14 +185,19 @@ export default function Navbar({ childern }) {
                         {user.email}
                       </div>
                     </div>
-                  
-                      <span className="sr-only">View notifications</span>
-                      <button className="relative group">
-      <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-      <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 bg-red-600 text-white rounded-full text-xs font-bold transform translate-x-2 -translate-y-2">
-        3
-      </span>
-    </button>
+
+                    <span className="sr-only">View notifications</span>
+                    <Link to="/cart">
+                    <button className="relative group">
+                      <ShoppingCartIcon
+                        className="h-6 w-6"
+                        aria-hidden="true"
+                      />
+                      <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 bg-red-600 text-white rounded-full text-xs font-bold transform translate-x-2 -translate-y-2">
+                        3
+                      </span>
+                    </button>
+                    </Link>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
